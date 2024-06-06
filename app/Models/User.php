@@ -47,6 +47,6 @@ class User extends Authenticatable
 
     public function bills(): BelongsToMany
     {
-        return $this->belongsToMany(Bill::class);
+        return $this->belongsToMany(Bill::class, 'bill_user');
     }
 }

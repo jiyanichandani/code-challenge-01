@@ -16,4 +16,8 @@ class BillStage extends Model
         'name', 'label', 'color_name', 'order',
     ];
 
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
 }
