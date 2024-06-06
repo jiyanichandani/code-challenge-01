@@ -44,7 +44,7 @@ class AssignBillsCommand extends Command
                 if ($user->bills_count < 3) {
                     $user->bills()->attach($bill->id, ['created_at' => now(), 'updated_at' => now()]);
                     $user->bills_count++;
-                    $this->info("Bill {$bill->id} assigned to User {$user->id}.");
+                    $this->info("Bill {$bill->id} assigned to User {$user->name}.");
                 } else {
                     $this->warn("User {$user->name} has reached the maximum number of assigned bills (3). Skipping assignment for Bill {$bill->id}.");
                 }
